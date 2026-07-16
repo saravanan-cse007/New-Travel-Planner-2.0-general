@@ -1,0 +1,131 @@
+{
+  "project_name": "Travel Planner AI",
+  "theme": "DARK",
+  "archetype": "Archetype 5 (Luxury) mixed with Archetype 7 (Electric/Neon)",
+  "design_philosophy": "Premium Night-time / Bioluminescent Luxury. A highly cinematic, dark-first application leveraging deep space backgrounds, crisp glassmorphic panels, and neon-lit magenta/purple gradients that glow rather than overwhelm. This evokes the excitement of a night flight or neon city exploration while maintaining high-end SaaS legibility.",
+  "typography": {
+    "fonts": {
+      "heading": "'Clash Display', sans-serif",
+      "body": "'Manrope', sans-serif",
+      "mono": "'Azeret Mono', monospace",
+      "accent": "'Cabinet Grotesk', sans-serif"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-heading font-semibold",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-heading font-medium",
+      "h3": "text-xl sm:text-2xl tracking-tight font-heading font-medium",
+      "body": "text-base font-body leading-relaxed",
+      "small_label": "text-xs tracking-[0.2em] uppercase font-mono font-medium text-purple-400"
+    }
+  },
+  "colors": {
+    "background": {
+      "main": "#0B0B0F",
+      "card": "#15151D"
+    },
+    "primary": {
+      "magenta": "#FF00FF",
+      "magenta_glow": "rgba(255, 0, 255, 0.5)",
+      "magenta_muted": "#B300B3"
+    },
+    "accent": {
+      "purple": "#8A2BE2",
+      "purple_glow": "rgba(138, 43, 226, 0.5)",
+      "violet": "#B266FF"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A0A0AB",
+      "muted": "#70707A"
+    },
+    "gradients": {
+      "primary_btn": "bg-gradient-to-r from-[#FF00FF] to-[#8A2BE2]",
+      "text_glow": "bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-fuchsia-400"
+    }
+  },
+  "surfaces_and_glassmorphism": {
+    "glass_card": "bg-[#15151D]/70 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+    "glass_card_hover": "hover:bg-[#15151D]/90 hover:border-purple-500/50 hover:shadow-[0_8px_32px_rgba(138,43,226,0.15)] transition-all duration-300",
+    "glass_header": "bg-[#0B0B0F]/80 backdrop-blur-2xl border-b border-white/5",
+    "active_glow_border": "relative before:absolute before:-inset-[1px] before:rounded-xl before:bg-gradient-to-r before:from-[#FF00FF] before:to-[#8A2BE2] before:-z-10 before:blur-sm"
+  },
+  "layouts": {
+    "landing_hero": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[90vh] pt-24 px-6 md:px-12. Hero text spans col-span-1 to 7, dramatic floating images span col-span-8 to 12.",
+    "dashboard_bento": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 md:p-8",
+    "itinerary_timeline": "relative pl-8 before:absolute before:inset-y-0 before:left-[15px] before:w-[2px] before:bg-gradient-to-b before:from-[#FF00FF] before:to-[#8A2BE2]/20. Day cards stack vertically with generous gap-8.",
+    "chat_assistant": "Flex column layout with glassmorphic input area pinned to bottom. User bubbles: bg-white/10. AI bubbles: bg-gradient-to-br from-[#8A2BE2]/20 to-[#FF00FF]/20 border border-purple-500/30."
+  },
+  "components": {
+    "buttons": {
+      "primary": "rounded-full bg-gradient-to-r from-[#FF00FF] to-[#8A2BE2] text-white px-8 py-3 font-body font-semibold shadow-[0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] hover:-translate-y-1 transition-all",
+      "secondary": "rounded-full bg-white/5 border border-white/10 text-white px-8 py-3 font-body font-semibold hover:bg-white/10 hover:border-white/20 transition-all",
+      "icon_button": "p-3 rounded-full bg-white/5 border border-white/10 hover:bg-purple-500/20 hover:border-purple-500/50 hover:text-[#FF00FF] transition-colors"
+    },
+    "inputs": "bg-[#15151D]/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FF00FF]/50 focus:border-transparent transition-all placeholder:text-white/30",
+    "budget_chart": "Recharts PieChart using colors: ['#FF00FF', '#8A2BE2', '#B266FF', '#FF66FF']. Center text showing total budget.",
+    "day_card": "Shadcn Accordion component heavily customized to remove default underline. Uses glass_card surface."
+  },
+  "motion": {
+    "page_transition": "Framer Motion: initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.4, ease: 'easeOut' }}",
+    "staggered_list": "Framer Motion: variants for container (staggerChildren: 0.1) and items (opacity: 0, y: 20 -> opacity: 1, y: 0)",
+    "hover_lift": "hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-300 ease-out"
+  },
+  "testing_attributes": {
+    "requirement": "All interactive and key informational elements MUST include a 'data-testid' attribute.",
+    "convention": "kebab-case, role-based (e.g., 'submit-trip-button', 'day-2-accordion-trigger', 'chat-input-field')"
+  },
+  "image_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1559245718-212fba2d22e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwzfHx0b2t5byUyMG5pZ2h0JTIwY2l0eSUyMG5lb258ZW58MHx8fHwxNzgyMTgxMTczfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Tokyo night city neon",
+      "category": "hero_background"
+    },
+    {
+      "url": "https://images.pexels.com/photos/15829047/pexels-photo-15829047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Colorful illuminated street in Tokyo",
+      "category": "destination_gallery"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1716801408923-c2149294dad2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBuaWdodHxlbnwwfHx8fDE3ODIxODExNzN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Luxury resort night pool overhead",
+      "category": "featured_destination"
+    },
+    {
+      "url": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Luxurious tropical resort with swimming pool and palms at dusk",
+      "category": "destination_gallery"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxiZWF1dGlmdWwlMjBsYW5kc2NhcGUlMjBzdW5zZXR8ZW58MHx8fHwxNzgyMTgxMTczfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Beautiful landscape sunset with boat",
+      "category": "dashboard_header"
+    },
+    {
+      "url": "https://images.pexels.com/photos/5688203/pexels-photo-5688203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Bright sundown sky over mountains",
+      "category": "destination_gallery"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1667271331041-0454c9f5902e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxwYXJpcyUyMGVpZmZlbCUyMHRvd2VyJTIwbmlnaHR8ZW58MHx8fHwxNzgyMTgxMTczfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Paris eiffel tower night",
+      "category": "destination_gallery"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1480859786001-3f3bfdf20f2c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHx0cmF2ZWxlciUyMGJhY2twYWNrJTIwbmlnaHR8ZW58MHx8fHwxNzgyMTgxMTczfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Traveler backpack night",
+      "category": "auth_background"
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Load Google Fonts: 'Clash Display', 'Manrope', and 'Azeret Mono'.",
+    "Install and use 'lucide-react' for all icons.",
+    "Install 'framer-motion' and use it for page transitions, timeline card entrances, and glass card hover states.",
+    "Install 'recharts' for the budget planner. Use the specified magenta and purple colors for the pie slices.",
+    "Implement the background using a deep '#0B0B0F' color. Do not use pure black.",
+    "For the Timeline: Implement a vertical line on the left side of the day cards. Use Shadcn Accordion for expandable Morning/Afternoon/Evening details.",
+    "Never use raw transparent backgrounds for the sticky header; always use the specified 'glass_header' class.",
+    "Apply 'data-testid' to absolutely every form input, select menu, button, and accordion trigger for automated testing.",
+    "Ensure dark mode text contrast is accessible by strictly using '#FFFFFF' for primary text and '#A0A0AB' for secondary text.",
+    "When displaying background images (e.g., hero_background), use an overlay gradient or absolute div with 'bg-black/60' to ensure the white text on top remains highly legible."
+  ]
+}

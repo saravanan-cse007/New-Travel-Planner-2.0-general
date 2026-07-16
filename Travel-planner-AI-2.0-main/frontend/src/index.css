@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Azeret+Mono:wght@400;500&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 5%;
+    --foreground: 0 0% 100%;
+    --card: 240 14% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 14% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 300 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 14%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 10% 14%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 271 76% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 20%;
+    --input: 240 6% 18%;
+    --ring: 300 100% 50%;
+    --radius: 0.75rem;
+  }
+  .dark { color-scheme: dark; }
+}
+
+html, body, #root { background-color: #0B0B0F; color: #FFFFFF; }
+
+body {
+  font-family: "Manrope", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(255, 0, 255, 0.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 30%, rgba(138, 43, 226, 0.12), transparent 55%),
+    #0B0B0F;
+  background-attachment: fixed;
+}
+
+.font-display { font-family: "Clash Display", "Manrope", sans-serif; letter-spacing: -0.02em; }
+.font-mono-acc { font-family: "Azeret Mono", monospace; }
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(21, 21, 29, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.glass-strong { background: rgba(21, 21, 29, 0.85); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.1); }
+.glass-header { background: rgba(11, 11, 15, 0.75); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+
+.text-glow { background: linear-gradient(90deg, #FF66FF, #C77DFF, #8A2BE2); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.btn-primary {
+  background: linear-gradient(90deg, #FF00FF 0%, #8A2BE2 100%);
+  box-shadow: 0 0 24px rgba(255, 0, 255, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(255, 0, 255, 0.55); }
+
+.scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(138,43,226,0.5); border-radius: 999px; }
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
